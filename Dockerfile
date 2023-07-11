@@ -4,6 +4,9 @@ WORKDIR /app
 COPY dotnet6.csproj .
 RUN dotnet restore
 
+RUN apt-get update && apt-get install -y nodejs npm
+
+
 COPY . .
 RUN dotnet build -c Release --no-restore
 RUN dotnet publish -c Release -o publish --no-restore
