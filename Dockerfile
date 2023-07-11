@@ -23,5 +23,5 @@ RUN groupadd -r arun && \
 
 USER arun
 
-EXPOSE 5000
+EXPOSE 8080
 ENTRYPOINT ["dotnet", "dotnet6.dll"]
