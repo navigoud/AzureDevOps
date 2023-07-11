@@ -1,23 +1,21 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
 
-RUN apt-get update
-RUN curl -sL https://deb.nodesource.com/setup_16.x  | bash -
-RUN apt-get -y install nodejs
+COPY dotnet6.csproj .
+RUN dotnet restore
 
-COPY . ./
-RUN dotnet restore \
-    dotnet build "dotnet6.csproj" -c Release && \
-    dotnet publish "dotnet6.csproj" -c Release -o publish
-
+COPY . .
+RUN dotnet build -c Release --no-restore
+RUN dotnet publish -c Release -o publish --no-restore
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
-
+WORKDIR /app
 COPY --from=build /app/publish .
-ENV ASPNETCORE_URLS http://*:5000
+
+ENV ASPNETCORE_URLS=http://*:5000
 
 RUN groupadd -r arun && \
-    useradd -r -g arun -s /bin/false pavani && \
+    useradd -r -g arun -s /bin/false arun && \
     chown -R arun:arun /app
 
 USER arun
