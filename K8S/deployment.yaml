@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: dotnet2
-        image: nbyreddy/dockerdep-10-app:1.0.0
+        image: redbull.azurecr.io/1.0.0
         ports:
         - containerPort: 80
