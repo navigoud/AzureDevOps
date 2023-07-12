@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: dotnet2
-        image: arunbachi/dotnet-aks:1.0.0
+        image: nbyreddy/dockerdep-10-app:1.0.0
         ports:
         - containerPort: 80
