@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dotnet
+  name: docker
   labels:
     app: myapp
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: myapp
@@ -15,7 +15,7 @@ spec:
         app: myapp
     spec:
       containers:
-      - name: dotnet-1
-        image: arunbachi/dotnet-aks:1.0.0
+      - name: dockerdep-10-app
+        image: nbyreddy/dockerdep-10-app:1.0.0
         ports:
-        - containerPort: 8080
+        - containerPort: 80
