@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: docker2
+  name: docker
   labels:
     app: myapp
 spec:
@@ -15,7 +15,7 @@ spec:
         app: myapp
     spec:
       containers:
-      - name: dotnet-aks:1.0.0
+      - name: dotnet2
         image: arunbachi/dotnet-aks:1.0.0
         ports:
         - containerPort: 80
