@@ -1,4 +1,4 @@
-apiVersion: v5.0.1
+apiVersion: v1
 kind: Service
 metadata:
   name: docker
@@ -10,5 +10,4 @@ spec:
       port: 80
       targetPort: 5000
   type: LoadBalancer
-  imagePullSecrets:
-    - name: arun
+  

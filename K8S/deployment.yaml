@@ -14,8 +14,10 @@ spec:
       labels:
         app: arun
     spec:
-      containers:
-      - name: dotnet2
-        image: redbull.azurecr.io/1.0.0
-        ports:
-        - containerPort: 80
+containers:
+  - name: dotnet2
+    image: redbull.azurecr.io/1.0.0
+    ports:
+      - containerPort: 80
+imagePullSecrets:
+  - name: arun
