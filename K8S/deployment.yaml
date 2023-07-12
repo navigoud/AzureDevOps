@@ -18,4 +18,4 @@ spec:
       - name: dotnet-1
         image: arunbachi/dotnet-aks:1.0.0
         ports:
-        - containerPort: 80
+        - containerPort: 8080
