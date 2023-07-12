@@ -4,16 +4,16 @@ metadata:
   name: docker
   namespace: arun
   labels:
-    app: myapp
+    app: arun
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: myapp
+      app: arun
   template:
     metadata:
       labels:
-        app: myapp
+        app: arun
     spec:
       containers:
       - name: dotnet2
