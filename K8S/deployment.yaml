@@ -17,6 +17,7 @@ spec:
       containers:
         - name: dotnet
           image: redbull.azurecr.io/1.0.0
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
       imagePullSecrets:
