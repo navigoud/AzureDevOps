@@ -17,9 +17,9 @@ spec:
     spec:
       containers:
         - name: dotnet
-          image: aaaaruuunnn.azurecr.io/dotnetdemo-app
+          image: acrcontainer28.azurecr.io/acrcontainer28:1.0.0
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 80
+            - containerPort: 5000
       imagePullSecrets:
-        - name: arunbachi
+        - name: nikitha
