@@ -1,25 +1,58 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: docker
+  name: dotnet
   namespace: arun
   labels:
-    app: arun
+    app: myapp
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: arun
+      app: myapp
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
   template:
     metadata:
       labels:
-        app: arun
+        app: myapp
     spec:
       containers:
-        - name: dotnet
-          image: acrcontainer28.azurecr.io/acrcontainer28:1.0.0
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 5000
-      imagePullSecrets:
-        - name: nikitha
+      - name: dotnetb1
+        image: Arunbachi/b1:1.0
+        resources:
+          requests:
+            cpu: 100m
+            memory: 300Mi
+          limits:
+            cpu: 200m
+            memory: 300Mi
+        livenessProbe:
+          exec:
+            command:
+            - ls
+          initialDelaySeconds: 5
+          timeoutSeconds: 5
+          successThreshold: 1
+          failureThreshold: 3
+          periodSeconds: 10
+        readinessProbe:
+          exec:
+            command:
+            - ls
+          initialDelaySeconds: 5
+          timeoutSeconds: 2
+          successThreshold: 1
+          failureThreshold: 3
+          periodSeconds: 10
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: configk8
+              key: DB_HOST
