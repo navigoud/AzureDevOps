@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: myapp-role
+  namespace: arun
+rules:
+- apiGroups: [""]
+  resources: ["pods", "services", "deployments"]
+  verbs: ["get", "list", "watch"]
+
+
+
+

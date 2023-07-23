@@ -4,5 +4,5 @@ metadata:
   name: dotnet
   namespace: arun
 data:
-  DB_HOST: key
+  key: DB_HOST
   # Add other configuration key-value pairs as needed

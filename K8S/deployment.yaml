@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dotnet
+  name: docker
   namespace: arun
   labels:
     app: myapp
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: myapp
@@ -20,9 +20,10 @@ spec:
       labels:
         app: myapp
     spec:
+      serviceAccountName: myapp-serviceaccount  # Use the created ServiceAccount
       containers:
-      - name: dotnetb1
-        image: arunbachi/b1:1.0
+      - name: dockerdep-10-app
+        image: arunbachi/b1:1
         resources:
           requests:
             cpu: 100m
@@ -30,29 +31,5 @@ spec:
           limits:
             cpu: 200m
             memory: 300Mi
-        livenessProbe:
-          exec:
-            command:
-            - ls
-          initialDelaySeconds: 5
-          timeoutSeconds: 5
-          successThreshold: 1
-          failureThreshold: 3
-          periodSeconds: 10
-        readinessProbe:
-          exec:
-            command:
-            - ls
-          initialDelaySeconds: 5
-          timeoutSeconds: 2
-          successThreshold: 1
-          failureThreshold: 3
-          periodSeconds: 10
         ports:
         - containerPort: 5000
-        env:
-        - name: dotnet
-          valueFrom:
-            configMapKeyRef:
-              name: dotnet
-              key: DB_HOST
