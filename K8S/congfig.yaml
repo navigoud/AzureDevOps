@@ -1,8 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: dotnet
+  name: myapp-config
   namespace: arun
 data:
-  key: DB_HOST
-  # Add other configuration key-value pairs as needed
+  your_key_from_configmap: your_value_for_key
