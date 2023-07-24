@@ -20,7 +20,7 @@ spec:
       labels:
         app: myapp
     spec:
-      serviceAccountName: myapp-serviceaccount  # Use the created ServiceAccount
+      serviceAccountName: myapp-serviceaccount
       containers:
       - name: dockerdep-10-app
         image: arunbachi/b1:1
@@ -33,3 +33,21 @@ spec:
             memory: 300Mi
         ports:
         - containerPort: 5000
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 5000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /readiness
+            port: 5000
+          initialDelaySeconds: 15
+          periodSeconds: 5
+        env:
+        - name: ENV_VARIABLE_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: myapp-config
+              key: your_key_from_configmap
