@@ -13,8 +13,8 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxUnavailable: 25%
-      maxSurge: 25%
+      maxUnavailable: 1
+      maxSurge: 1
   template:
     metadata:
       labels:
@@ -32,17 +32,17 @@ spec:
             cpu: 200m
             memory: 300Mi
         ports:
-        - containerPort: 5000
+        - containerPort: 80
         livenessProbe:
           httpGet:
             path: /healthz
-            port: 5000
+            port: 80
           initialDelaySeconds: 30
           periodSeconds: 10
         readinessProbe:
           httpGet:
             path: /readiness
-            port: 5000
+            port: 80
           initialDelaySeconds: 15
           periodSeconds: 5
         env:

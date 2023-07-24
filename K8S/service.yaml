@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: dotnet
-  namespace: arun
+  name: myapp-service  # Replace with your desired service name
+  namespace: arun     # Replace with the correct namespace (if different from "arun")
 spec:
   selector:
-    app: dotnet
+    app: myapp        # Match the labels of your Deployment
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 5000
-  type: LoadBalancer
+  - protocol: TCP
+    port: 8080          # The port to access the service
+    targetPort: 80  # The port your container listens to
+  type: LoadBalancer  # Expose the service with a LoadBalancer (for public access)
