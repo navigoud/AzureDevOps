@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: bathiniarundotnetarun 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bathiniarundotnetarun
+  template:
+    metadata:
+      labels:
+        app: bathiniarundotnetarun 
+    spec:
+      containers:
+        - name: bathiniarundotnetarun 
+          image: dotnet1.azurecr.io/bathiniarundotnetarun
+          ports:
+          - containerPort: 8080
