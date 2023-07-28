@@ -19,7 +19,7 @@ variables:
   imagePullSecret: 'dotnet14320ee2a-auth'
 
   # Agent VM image name
-  vmImageName: 'Default'
+  vmImageName: 'ipl'
 
 
 stages:
