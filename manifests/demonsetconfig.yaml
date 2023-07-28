@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fluentd-config
+  namespace: arun  # Replace 'your-namespace' with the desired namespace
+data:
+  fluent.conf: |-
+    <source>
+      @type forward
+      port 24224
+    </source>
+
+    <match **>
+      @type stdout
+    </match>

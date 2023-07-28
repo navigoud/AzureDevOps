@@ -8,6 +8,6 @@ spec:
     app: myapp        # Match the labels of your Deployment
   ports:
   - protocol: TCP
-    port: 8080          # The port to access the service
+    port: 80          # The port to access the service
     targetPort: 5000  # The port your container listens to
   type: LoadBalancer  # Expose the service with a LoadBalancer (for public access)

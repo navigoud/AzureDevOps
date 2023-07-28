@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+name: needforspeed
+version: 0.1.0
+kind: Deployment
+metadata:
+  name: dotnet-app
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dotnet-app
+  template:
+    metadata:
+      labels:
+        app: dotnet-app
+    spec:
+      containers:
+      - name: jetspeed
+        image: arunbachi/b1:1
+        ports:
+        - containerPort: 5000

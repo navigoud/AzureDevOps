@@ -1,7 +1,8 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: myapp-config
-  namespace: arun
+  name: redbull
+  namespace: default
 data:
-  your_key_from_configmap: your_value_for_key
+  # Add your configuration data here, for example:
+  DB_HOST: your_db_host_value
