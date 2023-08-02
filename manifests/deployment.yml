@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: bathiniarundotnetarun 
+  name: ramya321 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: bathiniarundotnetarun
+      app: ramya321
   template:
     metadata:
       labels:
-        app: bathiniarundotnetarun 
+        app: ramya321 
     spec:
       containers:
-        - name: bathiniarundotnetarun 
+        - name: ramya321 
           image: acrregistry195.azurecr.io/ramyaazuredevops:latest
           ports:
           - containerPort: 8080
