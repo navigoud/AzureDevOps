@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: naveen 
-          image: navicontainer0010.azurecr.io/navigoudazuredevop
+          image: navicontainer0010.azurecr.io/navigoudazuredevops:latest
           ports:
           - containerPort: 5000
