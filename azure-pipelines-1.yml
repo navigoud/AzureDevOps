@@ -19,7 +19,7 @@ variables:
   imagePullSecret: 'navicontainer00107759782e-auth'
 
   # Agent VM image name
-  vmImageName: 'self-hosted'
+  vmImageName: 'navi'
 
 
 stages:
