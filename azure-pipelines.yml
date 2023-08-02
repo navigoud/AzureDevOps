@@ -76,7 +76,7 @@ stages:
 
 - stage: Prod
   displayName: Prod stage
-  dependsOn: Build
+  dependsOn: Deploy
   jobs:
   - deployment: ProdDeploy
     condition: and(succeeded(), not(startsWith(variables['Build.SourceBranch'], 'refs/pull/')))
