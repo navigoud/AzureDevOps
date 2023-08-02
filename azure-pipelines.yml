@@ -19,7 +19,7 @@ variables:
   imagePullSecret: 'navicontainer00102794d8bc-auth'
 
   # Agent VM image name
-  vmImageName: 'navin'
+  vmImageName: 'naveen'
 
   # Name of the new namespace being created to deploy the PR changes.
   k8sNamespaceForPR: 'review-app-$(System.PullRequest.PullRequestId)'
