@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: ramya321 
+  name: self-hosted 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ramya321
+      app: self-hosted
   template:
     metadata:
       labels:
-        app: ramya321 
+        app: self-hosted 
     spec:
       containers:
-        - name: ramya321 
-          image: acrregistry195.azurecr.io/ramyaazuredevops:latest
+        - name: self-hosted 
+          image: navicontainer0010.azurecr.io/dotnetdemo:latest
           ports:
           - containerPort: 8080
