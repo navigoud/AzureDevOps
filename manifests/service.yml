@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: bathiniarundotnetarun
+    name: ramya321
 spec:
     type: LoadBalancer
     ports:
     - port: 5000
      
     selector:
-        app: bathiniarundotnetarun
+        app: ramya321
