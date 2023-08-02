@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: self-hosted 
+  name: navin 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: self-hosted
+      app: navin
   template:
     metadata:
       labels:
-        app: self-hosted 
+        app: navin 
     spec:
       containers:
-        - name: self-hosted 
+        - name: navin 
           image: navicontainer0010.azurecr.io/dotnetdemo:latest
           ports:
           - containerPort: 5000
