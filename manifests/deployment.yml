@@ -16,4 +16,4 @@ spec:
         - name: self-hosted 
           image: navicontainer0010.azurecr.io/dotnetdemo:latest
           ports:
-          - containerPort: 8080
+          - containerPort: 5000
