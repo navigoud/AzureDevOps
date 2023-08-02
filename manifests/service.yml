@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: self-hosted
+    name: navin
 spec:
     type: LoadBalancer
     ports:
     - port: 5000
      
     selector:
-        app: self-hosted
+        app: navin
