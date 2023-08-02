@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: myapp-service  # Replace with your desired service name
-  namespace: arun     # Replace with the correct namespace (if different from "arun")
+  namespace: navin     # Replace with the correct namespace (if different from "arun")
 spec:
   selector:
     app: myapp        # Match the labels of your Deployment
