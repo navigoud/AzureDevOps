@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: navin 
+  name: naveen 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: navin
+      app: naveen
   template:
     metadata:
       labels:
-        app: navin 
+        app: naveen 
     spec:
       containers:
-        - name: navin 
+        - name: naveen 
           image: navicontainer0010.azurecr.io/dotnetdemo:latest
           ports:
           - containerPort: 5000
