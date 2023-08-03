@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: naveen
+    name: navi
 spec:
     type: LoadBalancer
     ports:
     - port: 5000
      
     selector:
-        app: naveen
+        app: navi
