@@ -19,7 +19,7 @@ variables:
   imagePullSecret: 'navicontainer001099319dbe-auth'
 
   # Agent VM image name
-  vmImageName: 'naveen'
+  vmImageName: 'navi'
 
 
 stages:
