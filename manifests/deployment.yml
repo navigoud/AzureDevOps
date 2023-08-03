@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: naveen 
+  name: navi
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: naveen
+      app: navi
   template:
     metadata:
       labels:
-        app: naveen 
+        app: navi
     spec:
       containers:
-        - name: naveen 
+        - name: navi
           image: navicontainer0010.azurecr.io/navigoudazuredevops:latest
           ports:
           - containerPort: 5000
