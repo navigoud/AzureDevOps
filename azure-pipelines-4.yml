@@ -1,4 +1,12 @@
 # Deploy to Azure Kubernetes Service
+- task: HelmDeploy@0
+  inputs:
+    connectionType: 'Azure Resource Manager'
+    azureSubscription: 'Azure subscription 1(7d44d196-4277-4dae-8046-e3cf301305fa)'
+    azureResourceGroup: 'navi'
+    kubernetesCluster: 'navinew'
+    namespace: 'navin'
+    command: 'ls'
 # Build and push image to Azure Container Registry; Deploy to Azure Kubernetes Service
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
